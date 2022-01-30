@@ -4,7 +4,7 @@
   "description": "This is a chance to test es6 with node 9.3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx jasmine",
     "start": "node index.js",
     "dev": "node index.js"
   },
@@ -25,11 +25,8 @@
   },
   "homepage": "https://github.com/rhildred/es6test#readme",
   "dependencies": {
-    "engine.io": "*",
     "express": "*",
-    "socket.io": "*",
-    "twilio": "*",
-    "underscore": "*"
+    "twilio": "*"
   },
   "babel": {
     "presets": [
@@ -37,5 +34,6 @@
     ],
     "sourceMaps": true,
     "retainLines": true
-  }
+  },
+  "type": "module"
 }
