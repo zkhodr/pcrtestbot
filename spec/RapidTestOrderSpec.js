@@ -12,7 +12,7 @@ describe("order test", function(){
         const aResult = oOrder.handleInput("yes");
         expect(true).toEqual(aResult[0].toLowerCase().includes("reserved"));
     });
-    it("tests results of new", function(){
+    it("tests results of no", function(){
         const oOrder = new RapidTestOrder("519-123-4567");
         oOrder.handleInput("hello");
         const aResult = oOrder.handleInput("no");
