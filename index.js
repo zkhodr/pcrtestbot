@@ -30,6 +30,6 @@ app.post("/sms", (req, res) => {
   }
 });
 
-const server = app.listen(port, () => {
-  console.log(`Example app listening on port ${server.address().port}`)
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
 })
