@@ -17,6 +17,14 @@ class RapidTestOrder {
                 }
                 return aReturn;
             },
+                ORDERING: (sInput) => {
+                let aReturn = [];
+                this.stateCur = this.OrderState.ORDERING;
+                aReturn.push("What toppings would you like with that? choose from the following: shrimp tossed in a Cajun butter; Tiryaki Sauce");
+                this.stateCur = OrderState.DRINKS;
+                }
+                return aReturn;
+            },
             RESERVING: (sInput) => {
                 let aReturn = [];
                 this.isDone = true;
@@ -31,6 +39,8 @@ class RapidTestOrder {
                 }
                 return aReturn;
             }
+
+            
         };
 
         this.stateCur = this.OrderState.WELCOMING;
