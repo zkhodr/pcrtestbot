@@ -1,8 +1,8 @@
 const OrderState = Object.freeze({
     WELCOMING: Symbol("welcoming"),
     ORDERING: Symbol("ordering"),
-    PIZZA: Symbol("pizza"),
-    PASTA: Symbol("pasta"),
+    SALMON_ORLEANS: Symbol("salmon orleans"),
+    FIRE_GRILLED_SALMON: Symbol("fire grilled salmon"),
     TOPPINGS: Symbol("toppings"),
     SIZE: Symbol("size"),
     DRINKS: Symbol("drinks"),
@@ -31,7 +31,7 @@ class RapidTestOrder{
         switch(this.stateCur){
             case OrderState.WELCOMING:
                 this.stateCur = OrderState.ORDERING;
-                aReturn.push("Welcome to Dominos.");
+                aReturn.push("Welcome to Red Lobster.");
                 aReturn.push("May I take your order?");
                 
                 break;
@@ -39,10 +39,8 @@ class RapidTestOrder{
             case OrderState.ORDERING:
                 this.main = String(sInput); 
                 this.stateCur = OrderState.TOPPINGS;
-                if(sInput.toLowerCase().includes('pizza')){
-                  aReturn.push("Great choice! What size Pizza would you like to order today?");
-                if(sInput.toLowerCase().includes('pasta')){
-                  aReturn.push("Great choice! What size Pasta would you like to order today?");
+                if(sInput.toLowerCase().includes('salmon') ||sInput.toLowerCase().includes('orleans') || sInput.toLowerCase().includes('grilled')){
+                  aReturn.push("Great choice! What size Salmon would you like to order today?");
                   
                 }
                 break;
@@ -56,7 +54,7 @@ class RapidTestOrder{
             case OrderState.DRINKS:
                 this.toppings = String(sInput); 
                 aReturn.push("Would you like a drink with that?");
-                aReturn.push("Choose from: Coke, Coca-Cola Zero Sugar, Diet Coke, Sprite, Ginger Ale, Nestea, Water, Fanta, A&W Root Beer");
+                aReturn.push("Choose from: Pepsi, Coca-Cola, Orange Juice, Apple Juice, Lemonade, Fruit Smoothie");
                 this.stateCur = OrderState.DESSERTS;
 
                 break;
@@ -64,14 +62,14 @@ class RapidTestOrder{
             case OrderState.DESSERTS:
                 this.drink = String(sInput);
                 aReturn.push("Would you like a dessert with that?");
-                aReturn.push("Choose from: Marbled Cookie Brownie, Choclate Lava Crunch Cake, Cinna Bites");
+                aReturn.push("Choose from: Choclate Wave, Vanilla Bean Cheesecake, Stawberry Cheesecake, Brownie Overboard, Warm Apple Crostada");
                 this.stateCur = OrderState.PRICE;
 
                 break;
 
             case OrderState.PRICE: 
                 this.dessert = String(sInput);
-                aReturn.push("Great Choices! Your total is: $32.48");
+                aReturn.push("Great Choice! Your total is: $32.48");
                 aReturn.push("You order the following: "); 
                 aReturn.push(this.main); 
                 aReturn.push(this.toppings);
