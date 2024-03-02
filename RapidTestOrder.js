@@ -40,12 +40,12 @@ class RapidTestOrder{
                 this.main = String(sInput); 
                 this.stateCur = OrderState.TOPPINGS;
                 if(sInput.toLowerCase().includes('salmon') ||sInput.toLowerCase().includes('orleans') || sInput.toLowerCase().includes('grilled')){
-                  aReturn.push("sounds delicious :) what size of the Salmon would you like to order?");
+                  aReturn.push("Great choice! What size Salmon would you like to order today?");
                   
                 }
                 break;
             case OrderState.TOPPINGS: 
-                aReturn.push("What toppings would you like with that? choose from the following: shrimp tossed in a Cajun butter; Tiryaki Sauce");
+                aReturn.push("What toppings would you like with that? choose from the following options: shrimp tossed in a Cajun butter; Tiryaki Sauce");
                 this.stateCur = OrderState.DRINKS;
                 
    
@@ -54,22 +54,22 @@ class RapidTestOrder{
             case OrderState.DRINKS:
                 this.toppings = String(sInput); 
                 aReturn.push("Would you like a drink with that?");
-                aReturn.push("Choose from: Pepsi, Cola, Orange Juice, Apple Juice");
+                aReturn.push("Choose from: Pepsi, Coca-Cola, Orange Juice, Apple Juice, Lemonade, Fruit Smoothie");
                 this.stateCur = OrderState.DESSERTS;
 
                 break;
 
             case OrderState.DESSERTS:
                 this.drink = String(sInput);
-                aReturn.push("Would you like a desserts with that?");
-                aReturn.push("Choose from: Vanilla Bean Cheesecake, Chocolate Wave, Brownie Overboard, Warm Apple Crostade");
+                aReturn.push("Would you like a dessert with that?");
+                aReturn.push("Choose from: Choclate Wave, Vanilla Bean Cheesecake, Stawberry Cheesecake, Brownie Overboard, Warm Apple Crostada");
                 this.stateCur = OrderState.PRICE;
 
                 break;
 
             case OrderState.PRICE: 
                 this.dessert = String(sInput);
-                aReturn.push("Great Choice! Your total is: $28.78");
+                aReturn.push("Great Choice! Your total is: $32.48");
                 aReturn.push("You order the following: "); 
                 aReturn.push(this.main); 
                 aReturn.push(this.toppings);
